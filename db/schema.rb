@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_19_113449) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_21_124349) do
+  create_table "articles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "description"
+    t.string "tags"
+  end
+
   create_table "authors", force: :cascade do |t|
     t.string "name"
     t.integer "age"
@@ -21,6 +28,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_19_113449) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reacts", force: :cascade do |t|
+    t.string "name"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
