@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  def details
+  def show
   end
 
   def create
