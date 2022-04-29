@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :authors
   resources :posts
+  # resources :categories
 
   get '/articles' => 'articles#index'
   get '/articles/new' => 'articles#new', as: 'new_article'
@@ -12,10 +13,10 @@ Rails.application.routes.draw do
 
   #categories
   get '/categories' => 'categories#index'
-  get '/categories/new' => 'categories#new', as: 'new_category'
-  get '/categories/:id/edit' => 'categories#edit', as: 'edit_category'
-  post '/categories' => 'categories#create', as: 'create_category'
-  patch '/categories/:id' => 'categories#update', as: 'update_category'
-  get '/categories/:id/' => 'categories#show', as: 'show_category'
+  get '/categories/new' => 'categories#new', as: "new_category"
+  post '/categories' => 'categories#create', as: "create_category"
+  get '/categories/:id' => 'categories#show', as: "category"
+  get '/categories/:id/edit' => 'categories#edit', as: "edit_category"
+  patch '/categories/:id' => 'categories#update', as: "update_category"
 
 end

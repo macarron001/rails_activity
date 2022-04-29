@@ -1,10 +1,14 @@
 class CategoriesController < ApplicationController
 
+  def index
+  end
+  
   def new
     @category = Category.new
   end
 
   def show
+    @category = Category.find(params[:id])
   end
 
   def create
@@ -15,6 +19,7 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    @category = Category.find(params[:id])
   end
 
   def update
