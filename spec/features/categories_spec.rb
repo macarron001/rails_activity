@@ -28,7 +28,7 @@ RSpec.describe "Categories", type: :feature do
 
   describe "edit a category" do
 
-    category = Category.create!(title: "y8", description: "hehe")
+    category = Category.create!(title: "y12", description: "hehe")
     before { visit "/categories/#{category.id}/edit" }
 
     it 'edits the form' do
@@ -41,5 +41,17 @@ RSpec.describe "Categories", type: :feature do
       new_category = Category.find(category.id)
       expect(new_category.title).to eq "test"
     end
+  end
+
+  describe "delete a category" do
+
+    category = Category.create!(title: "x4", description: "delete")
+    before { visit "/categories/#{category.id}" }
+
+    it "deletes the category" do
+      # click_on 'Destroy this category'
+      expect(page).to have_selector(:link_or_button, 'Destroy this category')
+    end
+
   end
 end
