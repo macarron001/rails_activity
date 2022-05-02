@@ -1,13 +1,8 @@
-<%= form_with url: create_article_path, local: true do |f| %>
+<%= form_with model: @article, local: true do |f| %>
 
 <p>
-  <%= f.label :name %><br />
-  <%= f.text_field :name %><br />
-</p>
-
-<p>
-  <%= f.label :body %><br />
-  <%= f.text_field :body %><br />
+  <%= f.label :description %><br />
+  <%= f.text_field :description %><br />
 </p>
 
 <p>

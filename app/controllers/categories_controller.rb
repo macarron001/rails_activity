@@ -29,6 +29,10 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def delete
+    @category = Category.delete(params[:id])
+  end
+
   private
   def category_params
     params.require(:category).permit(:title, :description)

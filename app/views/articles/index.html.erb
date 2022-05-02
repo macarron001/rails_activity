@@ -2,8 +2,7 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Name</th>
-      <th>Body</th>
+      <th>Description</th>
     </tr>
 
   </thead>
@@ -12,8 +11,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.id %> </td>
-        <td><%= article.name %> </td>
-        <td><%= article.body %> </td>
+        <td><%= article.description %> </td>
       </tr>
     <% end %>
   </tbody>

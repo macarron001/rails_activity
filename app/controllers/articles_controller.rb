@@ -10,8 +10,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new
-    @article.name = params[:name]
-    @article.body = params[:body]
+    @article.description = params[:article][:description]
 
     if @article.save
       redirect_to articles_path
@@ -35,7 +34,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:name, :body)
+    params.require(:article).permit(:description)
   end
 
 end
